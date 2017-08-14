@@ -21,7 +21,7 @@ handle_map = {
     'dir': car.dir,
     'trueFlag' : car.trueFlag,
     'falseFlag' : car.falseFlag,
-    'bichang' : car.bizhang,
+    'bizhang' : car.bizhang,
 }
 
 @app.route('/', methods=['GET'])

@@ -45,6 +45,6 @@ if __name__ == '__main__':
 		conn = httplib.HTTPConnection(config.WEB_ADDRESS, config.WEB_PORT)
 		conn.request("GET", "/handle?type=bizhang")
 		response = conn.getresponse()
-		print '避障日志： ' + response.reason
+		print '避障日志：%d - %s ' % (response.status, response.reason)
 		conn.close()
-	time.sleep(1)
+	time.sleep(0.5)

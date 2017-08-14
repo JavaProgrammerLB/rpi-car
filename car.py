@@ -2,6 +2,7 @@
 
 import RPi.GPIO as gpio
 import config as c
+import time
 
 class Car:
     def __init__(self, dir, flag):
@@ -90,9 +91,11 @@ class Car:
             self.stop()
     
     def bizhang(self):
-        # 让车右转，且不修改车的当前方向
-        self.falseFlag()
-        self.right()
-        self.trueFlag()
-        # 让车恢复原来的前进方向
-        self.before()
+	if self.dir !=  0:
+        	# 让车右转，且不修改车的当前方向
+        	self.falseFlag()
+        	self.right()
+		time.sleep(1.5)
+        	self.trueFlag()
+       		 # 让车恢复原来的前进方向
+        	self.before()
