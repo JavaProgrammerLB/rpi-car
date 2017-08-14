@@ -1,17 +1,16 @@
 # -*- coding: utf-8 -*-
 
+TRLG = 2
+ECHO = 3
 
-PIN_ENABLE_A1 = 7
-PIN_ENABLE_A2 = 11
+IN1 = 17
+IN2 = 18
+IN3 = 23
+IN4 = 24
 
-PIN_ENABLE_B1 = 22
-PIN_ENABLE_B2 = 29
-
-PIN_IO_IN1 =35 
-PIN_IO_IN2 = 36
-
-PIN_IO_IN3 = 37
-PIN_IO_IN4 = 38
-
-# web listen port
+# web
+WEB_ADDRESS = 'localhost'
 WEB_PORT = 8888
+
+# redis
+REDIS_ADDRESS = 'redis://localhost:6379'

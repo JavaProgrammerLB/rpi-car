@@ -1,11 +1,16 @@
 # -*- coding: utf-8 -*
 from flask import Flask, render_template, request, abort
 from car import Car
-from config import WEB_PORT
+import config as c
+import celeryconfig
+from celery import Celery
+from celery.schedules import crontab
+from datetime import timedelta
 
 app = Flask(__name__)
 
-car = Car()
+# 1-forward 2-backward 3-left 4-right
+car = Car(1, True)
 
 handle_map = {
     'forward': car.forward,
@@ -13,8 +18,11 @@ handle_map = {
     'right': car.right,
     'pause': car.stop,
     'backward': car.backward,
+    'dir': car.dir,
+    'trueFlag' : car.trueFlag,
+    'falseFlag' : car.falseFlag,
+    'bichang' : car.bizhang,
 }
-
 
 @app.route('/', methods=['GET'])
 def main_page():
@@ -35,6 +43,5 @@ def handle():
             abort(404)
     return 'ok'
 
-
 if __name__ == '__main__':
-    app.run(host="0.0.0.0", port=WEB_PORT, debug=False)
+    app.run(host="0.0.0.0", port=c.WEB_PORT, debug=False)

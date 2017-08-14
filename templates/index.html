@@ -55,15 +55,12 @@
     .control_panel .left-btn {
         background-image: url(/static/left-256.png);
     }
-
     .control_panel .right-btn {
         background-image: url(/static/right-256.png);
     }
-
     .control_panel .bottom-btn {
         background-image: url(/static/down-256.png);
     }
-
     .control_panel .center-btn {
         background-image: url(/static/pause-256.png);
     }
@@ -101,7 +98,6 @@
         $('.btn').click(function(){
             $.get("/handle", {type: $(this).attr('operation')}, function(data) {
                 if (data=="ok") {
-
                 } else {
                     alert('system error')
                 }
