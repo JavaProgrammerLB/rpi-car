@@ -2,9 +2,6 @@
 from flask import Flask, render_template, request, abort
 from car import Car
 import config as c
-import celeryconfig
-from celery import Celery
-from celery.schedules import crontab
 from datetime import timedelta
 
 app = Flask(__name__)
